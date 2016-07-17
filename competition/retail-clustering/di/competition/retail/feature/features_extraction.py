@@ -11,8 +11,6 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing.data import MinMaxScaler
 import sys
 
-
-
 def isNight(x):
     if (x is not None):
         if x.hour >=18 and x.hour <= 24:
