@@ -1,0 +1,32 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/yehia/workspace/python/competition/.metadata/.plugins/org.eclipse.core.resources/.projects/retail-clustering/com.python.pydev.analysis/v2_indexcache
+di.competition.retail.__init__|1468529597000000000|/home/yehia/workspace/python/competition/retail-clustering/di/competition/retail/__init__.py
+di.competition.retail.feature.__init__|1468529597000000000|/home/yehia/workspace/python/competition/retail-clustering/di/competition/retail/feature/__init__.py
+di.__init__|1468529597000000000|/home/yehia/workspace/python/competition/retail-clustering/di/__init__.py
+di.competition.__init__|1468529597000000000|/home/yehia/workspace/python/competition/retail-clustering/di/competition/__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+0
+-- END DICTIONARY
+-- START TREE 1
+15
+cen|0|
+clo|0|
+clu|0|
+cou|0|
+cus|0|
+dat|0|
+df|0|
+df_|0|
+dis|0|
+f|0|
+fea|0|
+inv|0|
+isn|0|
+np_|0|
+ret|0|
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

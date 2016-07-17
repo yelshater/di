@@ -1,0 +1,6 @@
+ClusterID,Count of Customers,Average of Quantity,Average Trans. Value, Channel Islands, Lebanon, Portugal, Cyprus, United Arab Emirates, EIRE, Canada, Netherlands, Israel, Czech Republic, Malta, RSA, Spain, Singapore, Sweden, Brazil, Poland, Finland, Italy, European Community, Hong Kong, France, Bahrain, Australia, Saudi Arabia, Japan, United Kingdom, Germany, Switzerland, Denmark, USA, Austria, Greece, Belgium,Average of isNight,Average of isWeekEnd, Lithuania,NightShoppers,WeekEndShoppers
+0,3431,21.14398135,26.36113378,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3431,0,0,0,0,0,0,0,0.018992262,0.035041851,0,0.018992262,0.035041851
+1,519,8.707129094,12.97988439,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,519,0,0,0,0,0,0,0,0.005114375,0.808115,0,0.005114375,0.2
+2,87,10.08045977,17.64178161,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,87,0,0,0,0,0,0,0,0,0,0,0,0,0.001185138,0.062647711,0,0.001185138,0.062647711
+3,95,10.52631579,19.54036842,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,95,0,0,0,0,0,0,0.015719798,0.095985304,0,0.015719798,0.1
+4,240,16.93333333,23.22827083,9,1,19,6.462880122,2,3,4,9,4,1,2,1,29.64949495,1,8,1,6,12,15,1,0,0,2,8.313461538,1,8,0,0,20.41742081,8.005727377,4,9.264399037,4,23.88661616,0.016913145,0.061275279,1,0.016913145,0.3
