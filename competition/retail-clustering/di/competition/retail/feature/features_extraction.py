@@ -23,13 +23,13 @@ def isNight(x):
 dateparse = lambda x: pd.datetime.strptime(x, '%d-%m-%Y %H:%M')
 
 if (len(sys.argv)!=3):
-    print('You should provide the input retail dataset (UCI) path and the centroids output path')
+    print('You should provide the input retail dataset (UCI) path (e.g. ~/retail-clustering/dataset/sample.csv) and the centroids output path')
     sys.exit()
 
 retail_ds_file_path = sys.argv[1]
 centroids_output = sys.argv[2]
 
-df = pd.read_csv(retail_ds_file_path , parse_dates=['InvoiceDate'],date_parser=dateparse)
+df = pd.read_csv(retail_ds_file_path , parse_dates=['InvoiceDate'],date_parser=dateparse) #parsing the transaction date
 retail_ds_file_path
 df['trans_value'] = df.apply(lambda row: row['Quantity'] * row['UnitPrice'] , axis = 1)
 countries_cat_to_bin_df = pd.get_dummies(df['Country']) #as Country is categorical feature, it should be transformed to binary
@@ -50,35 +50,33 @@ df['isNight'] = invoice_hours
 customer_dataframes = []
 
 df_by_customer = df.groupby(['CustomerID'],as_index=False)
-print("customers count " , len(df_by_customer))
 
-df_med_basket_size = df_by_customer['Quantity'].median()
+df_med_basket_size = df_by_customer['Quantity'].median() #median to exclude the outlier shoppers (e.g. group purchase,etc ...)
 customer_dataframes.append(df_med_basket_size)
 
 #print (df_med_basket_size)
 
-df_med_trans_value = df_by_customer['trans_value'].median() #median to exclude the outliers
+df_med_trans_value = df_by_customer['trans_value'].median() 
 customer_dataframes.append(df_med_trans_value)
+
 
 for country in distinct_countries:
     customer_dataframes.append(df_by_customer[country].mean())
+
 customer_dataframes.append(df_by_customer["StockCode"].count())
 customer_dataframes.append(df_by_customer["isNight"].mean())
 customer_dataframes.append(df_by_customer["isWeekEnd"].mean())
 
+#merging all the customers features
 customer_final_df = reduce(lambda left,right: pd.merge(left,right,on='CustomerID'), customer_dataframes)
-
-print ("after reducing dfs")
 
 np_dataset_array = customer_final_df.values
 cust_original_space = [x for x in np_dataset_array]
 features_values = np.array([x[1:] for x in np_dataset_array])
-features_values = MinMaxScaler().fit_transform(features_values)
-#print("after normalization " , features_values)
+features_values = MinMaxScaler().fit_transform(features_values) #normalizing the data as KMeans is distance based sensitive (i.e. one un-normalized fetaure can dominate the distance function)
 cluster_model = KMeans(n_clusters=5)
 cluster_model.fit(features_values)
-closest_centroids = cluster_model.predict(features_values)
-#print ("closest_centroids " ,closest_centroids)
+closest_centroids = cluster_model.predict(features_values) #assigning each customer to the closest centroid
 
 #printing the clustering output
 f = open(centroids_output,'w')
@@ -91,4 +89,3 @@ for cust_index in range(0,len(cust_original_space)):
     f.write("\n")
 f.close()
 
-print("done")
