@@ -1,6 +1,0 @@
-MODULES_MANAGER_V2
-di.__init__|/home/yehia/workspace/python/di/competition/retail-clustering/di/__init__.py
-di.competition.__init__|/home/yehia/workspace/python/di/competition/retail-clustering/di/competition/__init__.py
-di.competition.retail.__init__|/home/yehia/workspace/python/di/competition/retail-clustering/di/competition/retail/__init__.py
-di.competition.retail.feature.__init__|/home/yehia/workspace/python/di/competition/retail-clustering/di/competition/retail/feature/__init__.py
-di.competition.retail.feature.features_extraction|/home/yehia/workspace/python/di/competition/retail-clustering/di/competition/retail/feature/features_extraction.py
